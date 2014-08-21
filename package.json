@@ -1,0 +1,40 @@
+{
+  "name": "waterline-orchestrate",
+  "version": "0.10.0",
+  "description": "orchestrate adapter for Sails / Waterline",
+  "main": "adapter.js",
+  "scripts": {
+    "test": "node test/integration/runner -R spec -b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/balderdashy/waterline-%s.git"
+  },
+  "keywords": [
+    "orchestrate",
+    "adapter",
+    "sails",
+    "waterline",
+    "sails.js",
+    "plugin"
+  ],
+  "author": "Game Clash Inc",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "orchestrate": "^0.3.4"
+  },
+  "devDependencies": {
+    "waterline-adapter-tests": "~0.10.0",
+    "mocha": "*",
+    "captains-log": "~0.11.0"
+  },
+  "waterlineAdapter": {
+    "type": "orchestrate",
+    "interfaces": [
+      "semantic",
+      "queryable"
+    ],
+    "waterlineVersion": "~0.10.0"
+  }
+}
