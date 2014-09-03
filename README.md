@@ -1,6 +1,6 @@
 ![image_squidhome@2x.png](http://i.imgur.com/RIvu9.png)
 
-# waterline-orchestrate
+# waterline-orchestrate (Sails 0.10.x)
 
 Provides easy access to `orchestrate` from Sails.js & Waterline.
 
