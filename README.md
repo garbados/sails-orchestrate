@@ -12,9 +12,6 @@ To install this adapter, run:
 $ npm install waterline-orchestrate
 ```
 
-
-
-
 ### Usage
 
 This adapter exposes the following methods:
@@ -170,30 +167,114 @@ If we want to delete a graph relationship:
   Events are time-ordered objects that exist with the context of a Key-Value object. Consider comments on a post or messages in a thread.
 
 ###### `eventCreate()`
+  Creating an event:
 
-+ **Status**
-  + Planned
+  ```javascript
+    Users.eventCreate({
+      key: 'Steve',
+      type: "update",
+      data: {
+        "test" : "Hello!"
+      }
+    }, function (err. results){
+
+    });
+  ```
+
+  Creating an event at a specified time:
+
+  ```javascript
+    Users.eventCreate({
+      key: 'Steve',
+      type: "update",
+      data: {
+        "test" : "Hello!"
+      },
+      time: 1384534722568
+    }, function (err. results){
+
+    });
+  ```
 
 ###### `eventList()`
 
-+ **Status**
-  + Planned
+  Listing events:
+
+  ```javascript
+  Users.eventList({
+    key: 'Steve',
+    start: 1384534722568,
+    end: 1384534722568,
+    type: "update"
+  }, function (err, results){
+
+  });
+  ```
 
 ###### `eventRead()`
 
-+ **Status**
-  + Planned
+  Getting a specific event:
+
+  ```javascript
+  Users.eventRead({
+    key: "Steve",
+    time: 1369832019085,
+    ordinal: 9,
+    type: 'update'
+  }, function (err, results){
+
+  });
+  ```
 
 ###### `eventUpdate()`
 
-+ **Status**
-  + Planned
+  Updating an event:
+  ```javascript
+  Users.eventUpdate({
+    key: 'Steve',
+    type: 'update',
+    time: 1369832019085,
+    ordinal: 9,
+    data: {
+      "text": "Orchestrate is awesome!"
+    }
+  }, function (err, results){
+
+  });
+  ```
+
+  Updating an event, conditionally:
+
+  ```javascript
+  Users.eventUpdate({
+    key: 'Steve',
+    type: 'update',
+    time: 1369832019085,
+    ordinal: 9,
+    data: {
+      "text": "Orchestrate is awesome!"
+    },
+    ref : 'ae3dfa4325abe21e'
+  }, function (err, results){
+
+  });
+
+  ```
 
 ###### `eventDelete()`
 
-+ **Status**
-  + Planned
+  Deleting an event:
 
+  ```javascript
+  Users.eventDelete({
+    key: 'Steve',
+    type: 'update',
+    time: 1369832019085,
+    ordinal: 9
+  }, function (err, results){
+
+  });
+  ```
 ###### `orchesNative()`
 
 + **Status**
