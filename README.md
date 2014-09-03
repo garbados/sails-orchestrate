@@ -90,11 +90,24 @@ This adapter exposes the following methods:
 
   To view more methods for finding records please visit the waterline
   documentation. [Waterline](https://github.com/balderdashy/waterline).
-  
+
 ###### `destroy()`
 
-+ **Status**
-  + Planned
+  To remove a value:
+
+  ```javascript
+    Model.destroy('key').exec(function (err, results){
+
+    });
+  ```
+  To remove batch values
+  ```javascript
+    Model.destroy({
+      name: "Steve"
+    }).exec(function (err, results){
+
+    });
+  ```
 
 ## Graphing
 
