@@ -49,8 +49,8 @@ This adapter exposes the following methods:
     ```javascript
 
         var foo =  {
-            bar: zoo,
-            id: blah
+            bar: "zoo",
+            id: "Portland"
         };
 
         Model.create(foo).exec(function (err, results){
@@ -97,25 +97,68 @@ This adapter exposes the following methods:
 + **Status**
   + Planned
 
+## Graphing
+
+An awesome feature Orchestrate includes is the ability to
+generate graphs between collections. For example,
+consider the collections users and movies. Some user
+Steve will like a variety of movies. We can generate this
+relationship:
+
 ###### `graphCreate()`
 
-+ **Status**
-  + Planned
++ **Completed**
+  Here is how to create a graph between two values. Notice
+  that we are passing two collection names, because the "starting"
+  collection is your Model name.
+
+  ```javascript
+    Users.graphCreate({
+      key: "Steve",
+      relation: "likes",
+      toCollection: "movies",
+      toKey: "Superbad"
+    }, function (err, results){
+
+    });
+  ```
 
 ###### `graphRead()`
 
-+ **Status**
-  + Planned
++ **Completed**
+We can then look up all the different items Steve likes:
+  ```javascript
+    Users.graphRead({
+      key: "Steve",
+      relation: "likes"
+    }, function (err, results){
 
+    });
+  ```
+We can even take this another step further:
+  ```javascript
+  Users.graphRead({
+    key: "Steve",
+    relation: ["friends", "likes"]
+  }, function (err, results){
+
+  });
+  ```
 ###### `graphDelete()`
++ **Completed**
+This will return all of the things that friends of Steve have liked. This assumes a friend relation has previously been defined between Steve and another user.
 
-+ **Status**
-  + Planned
+If we want to delete a graph relationship:
+  ```javascript
+    Users.graphDelete({
+      key: "Steve",
+      relation: "likes",
+      toCollection: "movies",
+      toKey: "Superbad"
+    }, function (err, results){
 
-###### `graphCreate()`
-
-+ **Status**
-  + Planned
+    });
+  ```
 
 ###### `eventCreate()`
 
