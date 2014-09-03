@@ -46,18 +46,21 @@ This adapter exposes the following methods:
 ###### `create()`
 
 + **Completed**
+
+    To create a value
+
     ```javascript
+      var foo = {
+        "id" : "key"
+        "name": "Steve Kaliski",
+        "hometown": "New York, NY",
+        "twitter": "@stevekaliski"
+      };
 
-        var foo =  {
-            bar: "zoo",
-            id: "Portland"
-        };
-
-        Model.create(foo).exec(function (err, results){
+      Model.create(foo).exec(function (err, results){
             console.log(err);
             console.log(results);
-        });
-
+      });
     ```
 
     If you do not pass an id to the object before passing to the create
@@ -108,6 +111,7 @@ relationship:
 ###### `graphCreate()`
 
 + **Completed**
+
   Here is how to create a graph between two values. Notice
   that we are passing two collection names, because the "starting"
   collection is your Model name.
@@ -126,6 +130,7 @@ relationship:
 ###### `graphRead()`
 
 + **Completed**
+
 We can then look up all the different items Steve likes:
   ```javascript
     Users.graphRead({
@@ -146,6 +151,7 @@ We can even take this another step further:
   ```
 ###### `graphDelete()`
 + **Completed**
+
 This will return all of the things that friends of Steve have liked. This assumes a friend relation has previously been defined between Steve and another user.
 
 If we want to delete a graph relationship:
@@ -159,6 +165,9 @@ If we want to delete a graph relationship:
 
     });
   ```
+## Events
+
+  Events are time-ordered objects that exist with the context of a Key-Value object. Consider comments on a post or messages in a thread.
 
 ###### `eventCreate()`
 
