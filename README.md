@@ -22,12 +22,12 @@ This adapter exposes the following methods:
 ###### `find()`
 
 + **Completed**
-```javascript
+    ```javascript
     Model.find(id).exec(function (err, results) {
         console.log(err);
         console.log(results);
     });
-```
+    ```
     Or you can target multiples.
     ```javascript
 
