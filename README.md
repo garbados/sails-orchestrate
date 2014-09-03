@@ -4,11 +4,6 @@
 
 Provides easy access to `orchestrate` from Sails.js & Waterline.
 
-This module is a Waterline/Sails adapter, an early implementation of a rapidly-developing, tool-agnostic data standard.  Its goal is to provide a set of declarative interfaces, conventions, and best-practices for integrating with all sorts of data sources.  Not just databases-- external APIs, proprietary web services, or even hardware.
-
-Strict adherence to an adapter specification enables the (re)use of built-in generic test suites, standardized documentation, reasonable expectations around the API for your users, and overall, a more pleasant development experience for everyone.
-
-
 ### Installation
 
 To install this adapter, run:
@@ -27,12 +22,12 @@ This adapter exposes the following methods:
 ###### `find()`
 
 + **Completed**
-    ```javascript
-        Model.find(id).exec(function (err, results) {
-            console.log(err);
-            console.log(results);
-        });
-    ```
+```javascript
+    Model.find(id).exec(function (err, results) {
+        console.log(err);
+        console.log(results);
+    });
+```
     Or you can target multiples.
     ```javascript
 
@@ -45,7 +40,8 @@ This adapter exposes the following methods:
         });
 
     ```
-    This will pull values from Orchestrate.io if they have the parameter of name that is the value of Bob Marley and if age is 16.
+    This will pull values from Orchestrate.io if they have the parameter of name
+    that is the value of Bob Marley and if age is 16.
 
 ###### `create()`
 
@@ -82,7 +78,8 @@ This adapter exposes the following methods:
     });
     ```
 
-    Or you can grab a group of objects to be returned in an array by passing an object by describing which parameters to search for a value by.
+    Or you can grab a group of objects to be returned in an array by passing an
+    object by describing which parameters to search for a value by.
 
     ```javascript
     Model.find()
@@ -93,12 +90,73 @@ This adapter exposes the following methods:
     });
     ```
 
-    To view more methods for finding records please visit the waterline documentation. [Waterline](https://github.com/balderdashy/waterline).
+    To view more methods for finding records please visit the waterline
+    documentation. [Waterline](https://github.com/balderdashy/waterline).
 ###### `destroy()`
 
 + **Status**
   + Planned
 
+###### `graphCreate()`
 
++ **Status**
+  + Planned
+
+###### `graphRead()`
+
++ **Status**
+  + Planned
+
+###### `graphDelete()`
+
++ **Status**
+  + Planned
+
+###### `graphCreate()`
+
++ **Status**
+  + Planned
+
+###### `eventCreate()`
+
++ **Status**
+  + Planned
+
+###### `eventList()`
+
++ **Status**
+  + Planned
+
+###### `eventRead()`
+
++ **Status**
+  + Planned
+
+###### `eventUpdate()`
+
++ **Status**
+  + Planned
+
+###### `eventDelete()`
+
++ **Status**
+  + Planned
+
+###### `orchesNative()`
+
++ **Status**
+  + Planned
 
 ### Getting Started
+```javascript
+    /*Add this config/connections.js*/
+    orchestrateServer : {
+        adapter: "sails-orchestrate",
+        masterkey: your master key,
+        developmentkey: your developmentkey,
+        status: process.env.NODE_ENV || "dev"
+    },
+```
+Make sure that if you are using correct app status as the adapter
+will automatically select the appropriate key based on whether the app
+is production or not.
