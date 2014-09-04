@@ -1,5 +1,5 @@
 {
-  "name": "waterline-orchestrate",
+  "name": "sails-orchestrate",
   "version": "0.0.1",
   "description": "orchestrate adapter for Sails / Waterline",
   "main": "adapter.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/balderdashy/waterline-%s.git"
+    "url": "https://github.com/gameclash/sails-orchestrate.git"
   },
   "keywords": [
     "orchestrate",
