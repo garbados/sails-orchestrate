@@ -1,6 +1,6 @@
 {
   "name": "sails-orchestrate",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "orchestrate adapter for Sails / Waterline",
   "main": "adapter.js",
   "scripts": {
