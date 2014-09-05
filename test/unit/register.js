@@ -1,7 +1,13 @@
 /**
  * Test dependencies
  */
-var Adapter = require('../../');
+
+var Adapter;
+if (process.env.NODE_DEBUG === 'true') {
+  Adapter = require('../../');
+} else {
+  Adapter = require('../../lib-cov/adapter');
+}
 
 
 describe('registerCollection', function () {
