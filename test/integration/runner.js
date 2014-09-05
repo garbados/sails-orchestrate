@@ -17,9 +17,12 @@ var util = require('util');
 var mocha = require('mocha');
 var log = new (require('captains-log'))();
 var TestRunner = require('waterline-adapter-tests');
-var Adapter = require('../../');
-
-
+var Adapter;
+if (process.env.NODE_DEBUG === 'true') {
+  Adapter = require('../../');
+} else {
+  Adapter = require('../../lib-cov/adapter');
+}
 
 // Grab targeted interfaces from this adapter's `package.json` file:
 var package = {};
