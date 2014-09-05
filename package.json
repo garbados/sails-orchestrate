@@ -4,7 +4,9 @@
   "description": "orchestrate adapter for Sails / Waterline",
   "main": "adapter.js",
   "scripts": {
-    "test": "node test/integration/runner -R spec -b"
+    "test": "npm run jshint && npm run mocha",
+    "mocha": "./node_modules/.bin/mocha test/unit -R spec",
+    "jshint": "./node_modules/.bin/jshint lib test"
   },
   "repository": {
     "type": "git",
@@ -25,9 +27,10 @@
     "orchestrate": "^0.3.4"
   },
   "devDependencies": {
-    "waterline-adapter-tests": "~0.10.0",
+    "captains-log": "~0.11.0",
+    "jshint": "^2.5.5",
     "mocha": "*",
-    "captains-log": "~0.11.0"
+    "waterline-adapter-tests": "~0.10.0"
   },
   "waterlineAdapter": {
     "type": "orchestrate",
